@@ -22,6 +22,9 @@
           <input type="number" name="yearOfBirth" id="yearofbirth" class="form-control" placeholder="Enter year of birth..." value="<?=$author['yearOfBirth']?>">
         </div>
     
-        <input type="submit" value="Update" class="btn btn-success">
+        <div class="btn-group">
+            <input type="submit" value="Update" class="btn btn-success">
+            <a href="/authors" class="btn btn-secondary">Back to list of authors</a>
+        </div>
     </form>
 </div>

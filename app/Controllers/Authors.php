@@ -94,7 +94,6 @@ class Authors extends BaseController
     public function getDelete($id){
         $model = model(AuthorModel::class);
         $data['author'] = $model->getAuthors($id);
-        var_dump($data['author']);
         $data['title'] = 'Delete author:';
         return view("templates/header", $data)
             . view("authors/delete", $data)
@@ -109,6 +108,14 @@ class Authors extends BaseController
 
         return view("templates/header", $data)
             . view("authors/success")
+            . view("templates/footer");
+    }
+
+    public function getView($id){
+        $data['id'] = $id;
+        $data['title'] = 'INFO by author with id '.$id;
+        return view("templates/header", $data)
+            . view("authors/view", $data)
             . view("templates/footer");
     }
 }

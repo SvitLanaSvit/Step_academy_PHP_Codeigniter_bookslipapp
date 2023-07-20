@@ -15,8 +15,11 @@
             <td><?=esc($author['yearOfBirth'])?></td>
         </tr>
     </table>
-    <form action="/authors/delete/<?=esc($author['id'])?>" method="post">
-        <?=csrf_field()?>
-        <input type="submit" value="Delete author" class="btn btn-danger">
-    </form>
+    <div class="btn-group">
+        <form action="/authors/delete/<?=esc($author['id'])?>" method="post">
+            <?=csrf_field()?>
+            <input type="submit" value="Delete author" class="btn btn-danger">
+        </form>
+        <a href="/authors" class="btn btn-secondary">Back to list of authors</a>
+    </div>
 </div>

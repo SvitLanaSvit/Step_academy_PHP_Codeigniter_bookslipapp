@@ -145,4 +145,13 @@ class Books extends BaseController
             . view("books/success")
             . view("templates/footer");
     }
+
+    public function getView($id){
+        $data['id'] = $id;
+        $data['title'] = 'INFO by book with id '.$id;
+
+        return view("templates/header", $data)
+            . view("books/view", $data)
+            . view("templates/footer");
+    }
 }
