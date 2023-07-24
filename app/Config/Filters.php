@@ -30,7 +30,9 @@ class Filters extends BaseConfig
     public array $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
+             'csrf'=>[
+                "except"=>['/api/books', '/api/books/*']
+             ],
             // 'invalidchars',
         ],
         'after' => [
@@ -51,9 +53,9 @@ class Filters extends BaseConfig
      * permits any HTTP method to access a controller. Accessing the controller
      * with a method you don’t expect could bypass the filter.
      */
-    public array $methods = [
-        "post"=>["csrf"]
-    ];
+    // public array $methods = [
+    //     "post"=>["csrf"]
+    // ];
 
     /**
      * List of filter aliases that should run on any

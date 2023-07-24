@@ -1,6 +1,7 @@
 <?php
 
 namespace Config;
+use App\Controllers\Pages;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -30,7 +31,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-
+$routes->resource("api/books", ["controller"=>"BooksLib"]);
+$routes->get("pages/", [Pages::class, "index"]);
+$routes->get("pages/(:segment)", [Pages::class, "view"]);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
